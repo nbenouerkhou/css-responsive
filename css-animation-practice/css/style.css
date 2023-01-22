@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONTAINER 1 */
+.container {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    margin: 30px auto;
+    transition: width 1s 0.5s, height 1s 2s, background-color 1s 3s;
+}
+
+.container:hover {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+}
+
+/* CONTAINER 2 */
+.container-2 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(38, 105, 207);
+    margin: 30px auto;
+    border-radius: 50%;
+    /* transition la largeur et la hauteur se font en 1s sans delai et l'arrondi il se fait en 1s mais il va attendre 1s avant de se déclencher */
+    transition: width 1s, height 1s, border-radius 1s 1s;
+}
+
+.container-2:hover {
+    border-radius: 0;
+    width: 100px;
+    height: 100px;
+}
+
+/* CONTAINER 3 */
+.container-3 {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    margin: 30px auto;
+    opacity: 0.5;
+    transition: opacity 1s, transform 1s 1s;
+}
+
+.container-3:hover {
+    /* opacity pour la transparence */
+    opacity: 1;
+
+    /* La propriété transform vous permet de manipuler visuellement un élément en le faisant pivoter (rotate), en le déplaçant (translate), en le mettant à l'échelle (scale) */
+
+    /* transform: translate(); pour le deplacer */
+    /* transform: scale(); pour agrandir l'élément */
+    /* transform: rotate(); pour effectuer une rotation */
+    transform: rotate(45deg) scale(1.2) translate(10px);
+}
+
+/* CONTAINER 4 */
+.container-4 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(222, 102, 75);
+    border-radius: 50%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 2s;
+}
+
+/* au survol moitié transparent, rotation de 360deg deplacer vers la droite de 200px */
+.wrapper:hover .container-4 {
+    opacity: 0.5;
+    transform: translateX(200px) rotate(360deg);
+}
+
+/* CONTAINER 5 */
+.container-5 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: grey;
+    margin: 30px auto;
+    /* utilisation de l'animation turn */
+    /* une animation peut contenir un nom, une durée, un delais, un nb de répétition, un sens de l'animation */
+    animation: turn 2s 2s linear infinite alternate;
+}
+
+@keyframes turn {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(200px);
+        opacity: 1;
+    }
+}
+
+/* CIRCLE */
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+}
+
+.circle-1 {
+    animation: jump 0.4s ease-out infinite alternate;
+}
+
+.circle-2 {
+    animation: jump 0.4s 0.2s ease-out infinite alternate;
+}
+
+.circle-3 {
+    animation: jump 0.4s 0.4s ease-out infinite alternate;
+}
+
+.wrapper-3 {
+    margin: 30px 0;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: pink;
+}
+
+@keyframes jump {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* CONTAINER 6 */
+
+.container-6{
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    /* background-color: #f1f1f1; */
+}
+
+.content.active {
+    opacity: 0;
+    animation: show 1s 2s forwards;
+}
+
+@keyframes show {
+    from {
+        transform: translateY(150px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
