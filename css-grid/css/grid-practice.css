@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+}
+
+.container {
+    background-color: pink;
+    width: 80%;
+    min-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 10px;
+}
+
+.container article {
+    background-color: rgb(63, 130, 223);
+    padding: 10px 5px;
+}
+
+.container article:nth-child(1) {
+    grid-column: span 2;
+}
+
+.container article:nth-child(5) {
+    grid-column: span 3;
+}
+
+.container article:nth-child(9) {
+    grid-column: span 3;
+}
+
+.container article h2 {
+    margin-bottom: 20px;
+}
+
+.container article p {
+    margin-bottom: 10px;
+}
